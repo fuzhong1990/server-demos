@@ -10,7 +10,7 @@ import java.net.Socket;
 /**
  * Created by Fuzhong on 2015/12/24.
  */
-public class Asyserver {
+public class AsyServer {
 
     public static void main (String [] args) {
         int port = 9999;
@@ -24,7 +24,7 @@ public class Asyserver {
         ServerSocket server = null;
         try {
             server = new ServerSocket(port);
-            System.out.println("The Asyserver server is start in port : " + port);
+            System.out.println("The AsyServer server is start in port : " + port);
             Socket socket = null;
             ServerHandlerExecutePool singleExecutor = new ServerHandlerExecutePool(50, 10000);
             while (true) {
@@ -40,7 +40,6 @@ public class Asyserver {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                server = null;
             }
         }
     }
