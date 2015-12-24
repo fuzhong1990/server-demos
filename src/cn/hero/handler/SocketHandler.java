@@ -1,3 +1,5 @@
+package cn.hero.handler;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,11 +10,11 @@ import java.util.Date;
 /**
  * Created by Fuzhong on 2015/12/23.
  */
-public class NIOSocketHandler implements Runnable {
+public class SocketHandler implements Runnable {
 
     private Socket socket;
 
-    NIOSocketHandler (Socket socket){
+    public SocketHandler(Socket socket){
         this.socket = socket;
     }
 
@@ -29,8 +31,8 @@ public class NIOSocketHandler implements Runnable {
                 body = in.readLine();
                 if (body == null)
                     break;
-                System.out.println("The time server receive order:"+body);
-                currentTime = "QUERY TIME OVER".equalsIgnoreCase(body) ?
+                System.out.println("The server receive order:"+body);
+                currentTime = "QUERY TIME ORDER".equalsIgnoreCase(body) ?
                         new Date(System.currentTimeMillis()).toString() : "BAD ORDER";
                 out.println(currentTime);
             }
