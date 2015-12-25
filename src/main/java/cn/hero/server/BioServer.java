@@ -35,7 +35,6 @@ public class BioServer {
             if (server != null) {
                 System.out.println("The Bioserver server close!");
                 server.close();
-                server = null;
             }
         }
 
